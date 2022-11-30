@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
   const list = document.getElementById('list');
-  //fix the clearall to delete list
+  const taskList = document.getElementById('tasks');
      const clearAll = document.createElement('button');
       clearAll.innerHTML = 'Clear All';
       list.append(clearAll);
-        clearAll.addEventListener(onclick,()=> {
-          document.list.innerHTML = "";
+        clearAll.addEventListener('click',()=> {
+          taskList.innerHTML=" ";
           });
 });
