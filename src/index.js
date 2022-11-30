@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //const input = document.getElementById('new-task-description').value;
     const taskList = document.getElementById('tasks');
       const taskItem = document.createElement('li');
-      console.log(taskItem);
+      const complete = document.createElement('li');
+        complete.innerHTML = event.target['new-task-description'].value;
         taskItem.innerHTML = event.target['new-task-description'].value;
         taskList.append(taskItem);
 
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         taskItem.append(cancel);
       cancel.addEventListener('click', (event) => {
           taskItem.remove();
+          taskTable.append(complete);
       })
 
   });
@@ -27,4 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
         clearAll.addEventListener('click',()=> {
           taskList.innerHTML=" ";
           });
+
+  const taskTable = document.createElement('table');
+          taskTable.setAttribute('id', 'table-head');
+          taskTable.innerHTML= '<strong>Completed List</strong>';
+          list.append(taskTable);
+
+  const dueDate = document.getElementById('due-date');
+          taskItem.append(dueDate);
+          
 });
